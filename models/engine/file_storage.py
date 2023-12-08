@@ -54,7 +54,7 @@ class FileStorage:
         return classes
 
     def attributes(self):
-        """Returns classname and the attraibutes"""
+        """Returns classname and the attributes"""
         attributes = {
             "BaseModel":
                      {"id": str,
