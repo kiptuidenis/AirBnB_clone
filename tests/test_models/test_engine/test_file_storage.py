@@ -63,3 +63,7 @@ class TestFileStorage(unittest.TestCase):
         test_storage.reload()
         self.assertNotEquals(initial, test_storage.all())
         self.assertEqual(len(initial), len(test_storage.all()))
+    def test_instances(self):
+        """Test for storage instance"""
+        obj = FileStorage()
+        self.assertIsInstance(obj, FileStorage)
