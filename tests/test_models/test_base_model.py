@@ -17,7 +17,6 @@ class TestBaseModel(unittest.TestCase):
     def test_base_model_save(self):
         """Tests the save method on the base model class"""
         base_model = BaseModel()
-        time.sleep(0.5)
         date_now = datetime.now()
         base_model.save()
         diff = base_model.updated_at - date_now
