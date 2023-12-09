@@ -8,13 +8,18 @@ class HBNBCommand(cmd.Cmd):
     """This class defines the console"""
     prompt = "(hbnb) "
 
-    def do_quit(self, args):
-        """Quits the cmd interpreter"""
+    def do_quit(self, arg):
+        """Quit command to exit the program"""
         return True
 
-    def do_EOF(self, args):
-        """End of File"""
+    def do_EOF(self, arg):
+        """EOF signal to exit the program"""
+        print("")  # Print a new line before exiting
         return True
+
+    def emptyline(self):
+        """Handle empty line """
+        pass
 
 
 if __name__ == '__main__':
