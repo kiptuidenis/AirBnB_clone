@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 "This module contains tests for BaseModel class"
 import unittest
 from datetime import datetime

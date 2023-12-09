@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """This module contains the base class for the AirBnB project
 """
 from datetime import datetime
