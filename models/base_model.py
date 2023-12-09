@@ -27,12 +27,14 @@ class BaseModel:
         self.updated_at = datetime.now()
 
     def to_dict(self):
-        """_summary_
         """
-        self.updated_at = self.updated_at.isoformat()
-        self.created_at = self.created_at.isoformat()
-        self.__dict__['__class__'] = self.__class__.__name__
-        return self.__dict__
+        Returns a dictionary with all keys/values of __dict__ of the instance
+        """
+        MyDict = self.__dict__.copy()
+        MyDict["__class__"] = type(self).__name__
+        MyDict["created_at"] = MyDict["created_at"].isoformat()
+        MyDict["updated_at"] = MyDict["updated_at"].isoformat()
+        return MyDict
 
     def __str__(self):
         """Prints: [<class name>] (<self.id>) <self.__dict__>
