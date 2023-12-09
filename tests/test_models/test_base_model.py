@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
+"This module contains tests for BaseModel class"
 import unittest
 from datetime import datetime
 from models.base_model import BaseModel
 
 
-
 class TestBaseModel(unittest.TestCase):
     def test_BaseModel_init(self):
+        "Tests Init method of BaseModel"
         my_model = BaseModel()
         my_model.name = "My First Model"
         my_model.my_number = 89
@@ -22,14 +23,16 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(abs(diff.total_seconds()) < 0.01)
 
     def test_BaseModel_to_dict(self):
+        "Tests the to_dict method of BaseModel"
         my_model = BaseModel()
         my_model.name = "My First Model"
         my_model.my_number = 89
         my_model_dict = my_model.to_dict()
         self.assertEqual(my_model_dict["my_number"], 89)
         self.assertEqual(my_model_dict["__class__"], "BaseModel")
-    
+
     def test_BaseModel__str__(self):
+        "Tests __str__ method of BaseModel"
         my_model = BaseModel()
         my_model.name = "My First Model"
         my_model.my_number = 89
