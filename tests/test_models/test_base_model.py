@@ -20,7 +20,6 @@ class TestBaseModel(unittest.TestCase):
         base_model.save()
         key = "{}.{}".format(type(base_model).__name__, base_model.id)
         obj = {key: base_model.to_dict()}
-        self.assertTrue(os.path.isfile(FileStorage._FileStorage__file_path))
         with open(FileStorage._FileStorage__file_path,
                   "r", encoding="utf-8") as f:
             self.assertEqual(len(f.read()), len(json.dumps(obj)))
