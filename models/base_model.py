@@ -14,8 +14,10 @@ class BaseModel:
         """
         if len(kwargs) != 0:
             del kwargs['__class__']
-            kwargs['created_at'] = datetime.strptime(kwargs['created_at'], '%Y-%m-%dT%H:%M:%S.%f')
-            kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'], '%Y-%m-%dT%H:%M:%S.%f')
+            kwargs['created_at'] = datetime.strptime(kwargs['created_at'],
+                                                     '%Y-%m-%dT%H:%M:%S.%f')
+            kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'],
+                                                     '%Y-%m-%dT%H:%M:%S.%f')
             self.__dict__ = kwargs
         else:
             self.id = str(uuid.uuid4())
@@ -23,7 +25,7 @@ class BaseModel:
             storage.new(self)
 
     def save(self):
-        """Updates the public instance attribute 'updated_at' 
+        """Updates the public instance attribute 'updated_at'
            with the current datetime
         """
         self.updated_at = datetime.now()
@@ -42,4 +44,5 @@ class BaseModel:
     def __str__(self):
         """Prints: [<class name>] (<self.id>) <self.__dict__>
         """
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+                                     self.id, self.__dict__)
