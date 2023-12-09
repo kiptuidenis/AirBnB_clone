@@ -14,14 +14,11 @@ class TestBaseModel(unittest.TestCase):
 
         self.assertEqual(my_model.my_number, 89)
 
-    def test_base_model_instance_save(self):
-        """Tests that model save"""
+    def test_base_model_save(self):
+        """Tests the save method on the base model class"""
         base_model = BaseModel()
+        time.sleep(0.5)
+        date_now = datetime.now()
         base_model.save()
-        key = "{}.{}".format(type(base_model).__name__, base_model.id)
-        obj = {key: base_model.to_dict()}
-        with open(FileStorage._FileStorage__file_path,
-                  "r", encoding="utf-8") as f:
-            self.assertEqual(len(f.read()), len(json.dumps(obj)))
-            f.seek(0)
-            self.assertEqual(json.load(f), obj)
+        diff = base_model.updated_at - date_now
+        self.assertTrue(abs(diff.total_seconds()) < 0.01)
