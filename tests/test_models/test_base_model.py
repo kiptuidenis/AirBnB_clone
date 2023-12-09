@@ -6,6 +6,8 @@ from models.base_model import BaseModel
 
 
 class TestBaseModel(unittest.TestCase):
+    """Defines tests for attributes and methods of the BaseModel class
+    """
     def test_BaseModel_init(self):
         "Tests Init method of BaseModel"
         test_model = BaseModel()
