@@ -8,11 +8,11 @@ from models.base_model import BaseModel
 class TestBaseModel(unittest.TestCase):
     def test_BaseModel_init(self):
         "Tests Init method of BaseModel"
-        my_model = BaseModel()
-        my_model.name = "My First Model"
-        my_model.my_number = 89
+        test_model = BaseModel()
+        test_model.name = "My First Model"
+        test_model.my_number = 89
 
-        self.assertEqual(my_model.my_number, 89)
+        self.assertEqual(test_model.my_number, 89)
 
     def test_base_model_save(self):
         """Tests the save method on the base model class"""
@@ -24,15 +24,15 @@ class TestBaseModel(unittest.TestCase):
 
     def test_BaseModel_to_dict(self):
         "Tests the to_dict method of BaseModel"
-        my_model = BaseModel()
-        my_model.name = "My First Model"
-        my_model.my_number = 89
-        my_model_dict = my_model.to_dict()
-        self.assertEqual(my_model_dict["my_number"], 89)
-        self.assertEqual(my_model_dict["__class__"], "BaseModel")
+        test_model = BaseModel()
+        test_model.name = "My First Model"
+        test_model.my_number = 89
+        test_model_dict = test_model.to_dict()
+        self.assertEqual(test_model_dict["my_number"], 89)
+        self.assertEqual(test_model_dict["__class__"], "BaseModel")
 
     def test_BaseModel__str__(self):
         "Tests __str__ method of BaseModel"
-        my_model = BaseModel()
-        my_model.name = "My First Model"
-        my_model.my_number = 89
+        test_model = BaseModel()
+        test_model.name = "My First Model"
+        test_model.my_number = 89
