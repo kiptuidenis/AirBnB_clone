@@ -9,4 +9,4 @@ class TestBaseModel(unittest.TestCase):
         my_model.name = "My First Model"
         my_model.my_number = 89
 
-        self.assertEqual(my_model.number, 89)
+        self.assertEqual(my_model.my_number, 89)
