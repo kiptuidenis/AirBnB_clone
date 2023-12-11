@@ -3,6 +3,11 @@
 import cmd
 from models.base_model import BaseModel
 from models.user import User
+from models.city import City
+from models.place import Place
+from models.state import State
+from models.review import Review
+from models.amenity import Amenity
 from models.engine.file_storage import FileStorage
 from models import storage
 
@@ -10,7 +15,8 @@ from models import storage
 class HBNBCommand(cmd.Cmd):
     """This class defines the console"""
     prompt = "(hbnb)"
-    __classes = {"BaseModel", "User"}
+    __classes = {"BaseModel", "User", "City", "Amenity",
+                 "Review", "Place", "State",}
 
     def do_quit(self, args):
         """Quits the cmd interpreter"""
