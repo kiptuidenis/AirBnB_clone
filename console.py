@@ -62,9 +62,10 @@ class HBNBCommand(cmd.Cmd):
         elif line not in self.__classes:
             print("** class doesn't exist **")
         else:
-            my_model = eval(line)()
+            newObject = eval(line)()
+            storage.new(newObject)
             storage.save()
-            print(my_model.id)
+            print(newObject.id)
 
     def do_show(self, line):
         """Usage: show <class name> <id>"""
