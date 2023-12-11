@@ -2,6 +2,7 @@
 """This is the console"""
 import cmd
 from models.base_model import BaseModel
+from models.user import User
 from models.engine.file_storage import FileStorage
 from models import storage
 
@@ -9,7 +10,7 @@ from models import storage
 class HBNBCommand(cmd.Cmd):
     """This class defines the console"""
     prompt = "(hbnb)"
-    __classes = {"BaseModel"}
+    __classes = {"BaseModel", "User"}
 
     def do_quit(self, args):
         """Quits the cmd interpreter"""
