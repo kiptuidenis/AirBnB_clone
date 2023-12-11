@@ -4,7 +4,7 @@ from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    '''Initiallize User Class with attributes'''
+    '''Initiallize User Class with public class attributes'''
 
     email = ""
     password = ""
