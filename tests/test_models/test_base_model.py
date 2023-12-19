@@ -38,3 +38,6 @@ class TestBaseModel(unittest.TestCase):
         test_model = BaseModel()
         test_model.name = "My First Model"
         test_model.my_number = 89
+
+if __name__ == '__main__':
+    unittest.main()
